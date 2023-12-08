@@ -1,0 +1,47 @@
+<div *ngIf="showhome" class="container">
+  <img src="assets\sierra.png" class="logo" alt="logo">
+  <div class="content-container">
+    <div class="login-container">
+      <div class="login-content">
+        <mat-toolbar class="login-toolbar" color="primary">EMPLOYEE LOGIN</mat-toolbar>
+
+        <mat-card class="login-form">
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <mat-form-field>
+              <mat-icon matPrefix>person_outline</mat-icon>
+              <input autofocus type="text" matInput placeholder="Username" formControlName="username">
+              <mat-error *ngIf="loginForm.get('username')?.hasError('required')">Username is required</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-icon matPrefix>email</mat-icon>
+              <input autofocus type="email" matInput placeholder="E-mail" formControlName="email">
+              <mat-error *ngIf="loginForm.get('email')?.hasError('required')">Email is required</mat-error>
+              <mat-error *ngIf="loginForm.get('email')?.hasError('email')">Invalid email format</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-icon matPrefix>lock_outline</mat-icon>
+              <input type="password" autocomplete="false" matInput placeholder="Password" formControlName="password">
+              <mat-error *ngIf="loginForm.get('password')?.hasError('required')">Password is required</mat-error>
+              <mat-error *ngIf="loginForm.get('password')?.hasError('minlength') && loginForm.get('password')?.dirty">
+                Password must be at least 8 characters long
+              </mat-error>
+            </mat-form-field>
+            <mat-slide-toggle color="primary" >
+              <span class="toggle-btn">Remember me</span>
+            </mat-slide-toggle>
+
+            <br>
+
+            <nav>
+              <a mat-raised-button color="primary" routerLink="/emp-table" (click)="hidehome()">login</a>
+            </nav>
+
+          </form>
+        </mat-card>
+      </div>
+    </div>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
