@@ -14,8 +14,13 @@
   <div class="main-body">
   
     <mat-form-field>
-      <mat-label>Filter</mat-label>
-      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+      <mat-label>Filter first name</mat-label>
+      <input matInput (keyup)="applyFilter('firstName',$event)" placeholder="Ex. Mia" #firstNameinput>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Filter second name</mat-label>
+      <input matInput (keyup)="applyFilter('lastName',$event)" placeholder="Ex. George" #lastNameinput>
     </mat-form-field>
   
     <div class="table-container">

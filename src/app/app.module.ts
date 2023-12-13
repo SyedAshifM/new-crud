@@ -26,6 +26,8 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+//import { AuthService } from './auth.service';
+
 
 
 @NgModule({

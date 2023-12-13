@@ -16,7 +16,7 @@
   "profile": {
     "name": "typicode"
   },
-  "employees":[
+  "employees": [
     {
       "firstName": "Syed",
       "lastName": "Zakir",
@@ -40,6 +40,30 @@
       "experience": 4,
       "package": 7,
       "id": 2
+    },
+    {
+      "firstName": "prasanth",
+      "lastName": "subramani k",
+      "email": "prasanth02@gmail.com",
+      "dob": "2001-03-10T18:30:00.000Z",
+      "gender": "male",
+      "education": "Post Graduate",
+      "company": "Sierra",
+      "experience": 2,
+      "package": 5,
+      "id": 3
+    },
+    {
+      "firstName": "Syed",
+      "lastName": "Ashif",
+      "email": "syed123@gmail.com",
+      "dob": "2016-05-01T18:30:00.000Z",
+      "gender": "male",
+      "education": "Intermediate",
+      "company": "Sierra",
+      "experience": 2,
+      "package": 12,
+      "id": 4
     }
   ]
 }

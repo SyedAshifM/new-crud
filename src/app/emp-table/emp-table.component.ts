@@ -33,6 +33,7 @@ export class EmpTableComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+input: any;
 
   constructor(
     private _dialog: MatDialog,
@@ -66,12 +67,29 @@ export class EmpTableComponent implements OnInit {
     });
   }
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+  // applyFilter(event: Event) {
+  //   const filterValue = (event.target as HTMLInputElement).value;
+  //   this.dataSource.filter = filterValue.trim().toLowerCase();
 
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
+  //   if (this.dataSource.paginator) {
+  //     this.dataSource.paginator.firstPage();
+  //   }
+  // }
+
+  applyFilter(column: string, event: Event): void {
+    const filterValue = (event.target as HTMLInputElement).value;
+    
+    // Use the correct input field based on the column
+    if (column === 'firstName') {
+      this.dataSource.filterPredicate = (data, filter) => {
+        return data.firstName.toLowerCase().includes(filter);
+      };
+      this.dataSource.filter = filterValue.trim().toLowerCase();
+    } else if (column === 'lastName') {
+      this.dataSource.filterPredicate = (data, filter) => {
+        return data.lastName.toLowerCase().includes(filter);
+      };
+      this.dataSource.filter = filterValue.trim().toLowerCase();
     }
   }
 

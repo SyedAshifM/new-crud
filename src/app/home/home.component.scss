@@ -2,17 +2,18 @@
 
 
 
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto', sans-serif; /* Use your preferred font-family */
-}
+// body, html {
+//   margin: 0;
+//   padding: 0;
+//   font-family: 'Roboto', sans-serif; /* Use your preferred font-family */
+// }
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  //background-color: aqua;
 
 }
 
@@ -24,6 +25,7 @@ body, html {
 
 .content-container {
   text-align: center;
+  
 }
 
 .login-container {
@@ -36,9 +38,10 @@ body, html {
   width: 100%;
 }
 
-input{
-  width: auto;
-}
+// input{
+//   width: auto;
+//   //padding-right: 25px;
+// }
 
 .login-toolbar {
   background-color: #1976D2;
@@ -51,6 +54,7 @@ form {
   display: flex;
   flex-direction: column;
   width: 450px;
+  
 }
 
 .login-form{
@@ -60,11 +64,12 @@ form {
 
 mat-form-field {
   width: 100%;
+ padding-right: 30px;
 }
 
+
 .toggle-btn{
-  margin-right:300px;
-  
+  margin-right:300px; 
 }
 
 nav {

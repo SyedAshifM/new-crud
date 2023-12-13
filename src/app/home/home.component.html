@@ -1,4 +1,4 @@
-<div *ngIf="showhome" class="container">
+<div class="container">
   <img src="assets\sierra.png" class="logo" alt="logo">
   <div class="content-container">
     <div class="login-container">
@@ -27,15 +27,19 @@
               <mat-error *ngIf="loginForm.get('password')?.hasError('minlength') && loginForm.get('password')?.dirty">
                 Password must be at least 8 characters long
               </mat-error>
+        
+              <mat-error *ngIf="loginForm.get('password')?.hasError('passwordRequirements')">
+                Password must contain at least one uppercase letter, one special character, and one number
+              </mat-error>
             </mat-form-field>
             <mat-slide-toggle color="primary" >
               <span class="toggle-btn">Remember me</span>
             </mat-slide-toggle>
 
-            <br>
+            <!-- <br> -->
 
             <nav>
-              <a mat-raised-button color="primary" routerLink="/emp-table" (click)="hidehome()">login</a>
+              <a mat-raised-button color="primary" routerLink="/emp-table" [disabled]="!loginForm.valid">login</a>
             </nav>
 
           </form>
